@@ -47,15 +47,15 @@ export function SupportNetworkComponent() {
 		setNewContact((prev) => ({ ...prev, [name]: value }))
 	}
 
-	const addContact = () => {
-		if (newContact.name && newContact.met && newContact.contact) {
-			setContacts((prev) => [
-				...prev,
-				{ ...newContact, id: Date.now(), image: null },
-			])
-			setNewContact({ name: '', met: '', contact: '' })
-		}
-	}
+	// const addContact = () => {
+	// 	if (newContact.name && newContact.met && newContact.contact) {
+	// 		setContacts((prev) => [
+	// 			...prev,
+	// 			{ ...newContact, id: Date.now(), image: null as string | null },
+	// 		])
+	// 		setNewContact({ name: '', met: '', contact: '' })
+	// 	}
+	// }
 
 	const removeContact = (id: number) => {
 		setContacts((prev) => prev.filter((contact) => contact.id !== id))
@@ -162,7 +162,7 @@ export function SupportNetworkComponent() {
 						<form
 							onSubmit={(e) => {
 								e.preventDefault()
-								addContact()
+								// addContact()
 							}}
 							className='space-y-4'>
 							<div>

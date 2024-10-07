@@ -19,9 +19,10 @@ interface BreathingExercise {
 	duration: number
 	instructions: string[]
 	cycles: number
+	name: string
 }
 
-const breathingExercises = [
+const breathingExercises: BreathingExercise[] = [
 	{
 		id: 'box-breathing',
 		name: 'Box Breathing',
@@ -63,19 +64,20 @@ const breathingExercises = [
 ]
 
 export function BreathingExercisesComponent() {
-	const [activeExercise, setActiveExercise] = useState(null)
+	const [activeExercise, setActiveExercise] =
+		useState<BreathingExercise | null>(null)
 	const [timer, setTimer] = useState(0)
 	const [isActive, setIsActive] = useState(false)
 	const [currentStep, setCurrentStep] = useState(0)
 
 	useEffect(() => {
-		let interval = null
+		let interval: NodeJS.Timeout | null = null
 		if (isActive && timer > 0) {
 			interval = setInterval(() => {
 				setTimer((timer) => timer - 1)
 			}, 1000)
 		} else if (isActive && timer === 0) {
-			clearInterval(interval)
+			clearInterval(interval!)
 			if (
 				activeExercise &&
 				currentStep < activeExercise.instructions.length - 1
@@ -89,8 +91,8 @@ export function BreathingExercisesComponent() {
 				setCurrentStep(0)
 			}
 		}
-		return () => clearInterval(interval)
-	}, [isActive, timer, currentStep, activeExercise])
+		return () => clearInterval(interval!)
+	}, [isActive, timer, currentStep, activeExercise, setCurrentStep, setTimer])
 
 	const startExercise = (exercise: BreathingExercise) => {
 		setActiveExercise(exercise)
@@ -176,11 +178,13 @@ export function BreathingExercisesComponent() {
 							</p>
 							<Progress
 								value={
-									(timer /
-										(activeExercise.duration /
-											activeExercise.instructions
-												.length)) *
-									100
+									activeExercise
+										? (timer /
+												(activeExercise.duration /
+													activeExercise.instructions
+														.length)) *
+										  100
+										: 0
 								}
 								className='mb-4'
 							/>

@@ -221,7 +221,14 @@ export function Home() {
 	)
 }
 
-function ToolboxItem({ icon, title, children, href }) {
+interface ToolboxItemProps {
+	icon: React.ReactNode
+	title: string
+	children: React.ReactNode
+	href: string
+}
+
+function ToolboxItem({ icon, title, children, href }: ToolboxItemProps) {
 	return (
 		<Card className='flex-shrink-0 w-80 lg:w-full snap-center hover:shadow-lg transition-shadow bg-white bg-opacity-90'>
 			<CardHeader>

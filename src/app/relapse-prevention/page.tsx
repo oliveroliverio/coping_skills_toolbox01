@@ -1,9 +1,10 @@
 /** @format */
+import { RelapsePreventionComponent } from '@/components/relapse-prevention'
 
 export default function RelapsePrevention() {
 	return (
 		<>
-			<h1>RelapsePrevention</h1>
+			<RelapsePreventionComponent />
 		</>
 	)
 }

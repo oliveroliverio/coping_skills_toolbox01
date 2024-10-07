@@ -1,9 +1,10 @@
 /** @format */
+import { JoyListComponent } from '@/components/joy-list'
 
 export default function Joy() {
 	return (
 		<>
-			<h1>Joy</h1>
+			<JoyListComponent />
 		</>
 	)
 }

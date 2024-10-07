@@ -1,9 +1,10 @@
 /** @format */
+import { InspirationalContentComponent } from '@/components/inspirational-content'
 
 export default function Inspiration() {
 	return (
 		<>
-			<h1>Inspiration</h1>
+			<InspirationalContentComponent />
 		</>
 	)
 }

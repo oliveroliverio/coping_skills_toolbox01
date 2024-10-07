@@ -1,9 +1,10 @@
 /** @format */
+import { SupportNetworkComponent } from '@/components/support-network'
 
 export default function Support() {
 	return (
 		<>
-			<h1>Support</h1>
+			<SupportNetworkComponent />
 		</>
 	)
 }

@@ -1,9 +1,10 @@
 /** @format */
+import { AffirmationsComponent } from '@/components/affirmations'
 
 export default function Affirmations() {
 	return (
 		<>
-			<h1>Affirmations</h1>
+			<AffirmationsComponent />
 		</>
 	)
 }

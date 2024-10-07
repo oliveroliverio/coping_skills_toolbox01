@@ -210,8 +210,8 @@ export function Home() {
 
 			<footer className='p-6 bg-white bg-opacity-80 shadow-md mt-6'>
 				<p className='text-center text-gray-600'>
-					Remember, you're not alone. Reach out for help when you need
-					it.
+					Remember, you are not alone. Reach out for help when you
+					need it.
 				</p>
 				<div className='flex justify-center mt-4'>
 					<Button variant='outline'>Emergency Contacts</Button>

@@ -44,7 +44,7 @@ export function AffirmationsComponent() {
   )
 }
 
-function Section({ title, children }) {
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section>
       <h2 className="text-3xl font-semibold text-purple-600 mb-6">{title}</h2>
@@ -55,7 +55,7 @@ function Section({ title, children }) {
   )
 }
 
-function AffirmationCard({ affirmation, description }) {
+function AffirmationCard({ affirmation, description }: { affirmation: string; description: string }) {
   return (
     <Card className="bg-white bg-opacity-90 flex flex-col h-full">
       <CardHeader>
@@ -70,7 +70,7 @@ function AffirmationCard({ affirmation, description }) {
   )
 }
 
-function ResourceCard({ resource }) {
+function ResourceCard({ resource }: { resource: { name: string; description: string; link: string } }) {
   return (
     <Card className="bg-white bg-opacity-90 flex flex-col h-full">
       <CardHeader>
@@ -80,10 +80,10 @@ function ResourceCard({ resource }) {
       </CardHeader>
       <CardContent className="flex-grow flex flex-col justify-between">
         <p className="text-gray-600 mb-4">{resource.description}</p>
-        <a 
-          href={resource.link} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href={resource.link}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center text-purple-600 hover:text-purple-800"
         >
           Visit Resource

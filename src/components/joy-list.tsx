@@ -318,7 +318,21 @@ export function JoyListComponent() {
 	)
 }
 
-function JoyItem({ title, icon, description, resources }) {
+function JoyItem({
+	title,
+	icon,
+	description,
+	resources,
+}: {
+	title: string
+	icon: React.ReactNode
+	description: string
+	resources: Array<{
+		name: string
+		link: string
+		description: string
+	}>
+}) {
 	return (
 		<Card className='bg-white bg-opacity-90'>
 			<CardHeader>

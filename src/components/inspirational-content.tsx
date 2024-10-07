@@ -140,6 +140,11 @@ function ResourceCard({
 	description,
 	link,
 	icon = <ExternalLink className='h-6 w-6' />,
+}: {
+	title: string
+	description: string
+	link: string
+	icon?: React.ReactNode
 }) {
 	return (
 		<Card className='bg-white bg-opacity-90'>
@@ -164,7 +169,17 @@ function ResourceCard({
 	)
 }
 
-function BookPassage({ title, author, quote, description }) {
+function BookPassage({
+	title,
+	author,
+	quote,
+	description,
+}: {
+	title: string
+	author: string
+	quote: string
+	description: string
+}) {
 	return (
 		<Card className='bg-white bg-opacity-90'>
 			<CardHeader>

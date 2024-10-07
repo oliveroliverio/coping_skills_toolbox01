@@ -42,7 +42,7 @@ export function SupportNetworkComponent() {
 		contact: '',
 	})
 
-	const handleInputChange = (e) => {
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target
 		setNewContact((prev) => ({ ...prev, [name]: value }))
 	}
@@ -57,19 +57,22 @@ export function SupportNetworkComponent() {
 		}
 	}
 
-	const removeContact = (id) => {
+	const removeContact = (id: number) => {
 		setContacts((prev) => prev.filter((contact) => contact.id !== id))
 	}
-
-	const handleImageUpload = (id, e) => {
-		const file = e.target.files[0]
-		if (file) {
+	const handleImageUpload = (
+		id: number,
+		e: React.ChangeEvent<HTMLInputElement>
+	) => {
+		const files = e.target.files
+		if (files && files.length > 0) {
+			const file = files[0]
 			const reader = new FileReader()
 			reader.onloadend = () => {
 				setContacts((prev) =>
 					prev.map((contact) =>
 						contact.id === id
-							? { ...contact, image: reader.result }
+							? { ...contact, image: reader.result as string }
 							: contact
 					)
 				)

@@ -69,7 +69,10 @@ export function BreathingExercisesComponent() {
 			}, 1000)
 		} else if (isActive && timer === 0) {
 			clearInterval(interval)
-			if (currentStep < activeExercise.instructions.length - 1) {
+			if (
+				activeExercise &&
+				currentStep < activeExercise.instructions.length - 1
+			) {
 				setCurrentStep(currentStep + 1)
 				setTimer(
 					activeExercise.duration / activeExercise.instructions.length

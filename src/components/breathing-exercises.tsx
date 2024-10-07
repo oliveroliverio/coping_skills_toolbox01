@@ -14,6 +14,13 @@ import {
 } from '@/components/ui/accordion'
 import { Progress } from '@/components/ui/progress'
 
+interface BreathingExercise {
+	id: string
+	duration: number
+	instructions: string[]
+	cycles: number
+}
+
 const breathingExercises = [
 	{
 		id: 'box-breathing',
@@ -85,7 +92,7 @@ export function BreathingExercisesComponent() {
 		return () => clearInterval(interval)
 	}, [isActive, timer, currentStep, activeExercise])
 
-	const startExercise = (exercise) => {
+	const startExercise = (exercise: BreathingExercise) => {
 		setActiveExercise(exercise)
 		setTimer(exercise.duration / exercise.instructions.length)
 		setCurrentStep(0)

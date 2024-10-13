@@ -137,6 +137,12 @@ export function Home() {
 					}>
 					<ToolboxItem
 						icon={<HeartHandshake />}
+						title='Daily IOP'
+						href='/daily-iop'>
+						Record of daily IOP activities, handouts, and notes.
+					</ToolboxItem>
+					<ToolboxItem
+						icon={<HeartHandshake />}
 						title='Support Network'
 						href='/support'>
 						Access your list of support groups, classes, and contact
@@ -157,14 +163,6 @@ export function Home() {
 						href='/inspiration'>
 						Find encouraging quotes, book passages, and links to
 						uplifting podcasts or videos.
-					</ToolboxItem>
-
-					<ToolboxItem
-						icon={<Utensils />}
-						title='Comfort & Recipes'
-						href='/comfort'>
-						Discover soothing items and healthy recipes that
-						contribute to your well-being.
 					</ToolboxItem>
 
 					<ToolboxItem
@@ -189,14 +187,6 @@ export function Home() {
 						href='/affirmations'>
 						Read and add to your list of positive mantras and
 						affirmations.
-					</ToolboxItem>
-
-					<ToolboxItem
-						icon={<PenTool />}
-						title='Creative Outlets'
-						href='/creative'>
-						Explore creative activities and journaling prompts to
-						express your emotions.
 					</ToolboxItem>
 
 					<ToolboxItem
